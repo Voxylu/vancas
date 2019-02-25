@@ -1,0 +1,17 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "trucs": "^1.0.1",
+    "vancas": "^1.0.5"
+  },
+  "scripts": {
+    "start": "parcel src/index.html"
+  }
+}
