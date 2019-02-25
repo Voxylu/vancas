@@ -14,6 +14,8 @@ export class CanvasLogic extends CanvasWrapper {
    */
   private rafRef = 0
 
+  private running = false
+
   /**
    * Update is called before a render.
    * Override it to implement your own logic.
@@ -38,6 +40,7 @@ export class CanvasLogic extends CanvasWrapper {
    * Start the update and render loop.
    */
   public start() {
+    this.running = true
     this.main()
   }
 
@@ -45,21 +48,24 @@ export class CanvasLogic extends CanvasWrapper {
    * Stop the update & render loop.
    */
   public stop() {
+    this.running = false
     cancelAnimationFrame(this.rafRef)
   }
 
   private main = () => {
-    if (this.lastTime === 0) {
-      this.lastTime = Date.now()
+    if (this.running) {
+      if (this.lastTime === 0) {
+        this.lastTime = Date.now()
+      }
+      const now = Date.now()
+      const delta = (now - this.lastTime) / 1000.0
+
+      this.update(delta)
+      this.render()
+
+      this.lastTime = now
+
+      this.rafRef = requestAnimationFrame(this.main)
     }
-    const now = Date.now()
-    const delta = (now - this.lastTime) / 1000.0
-
-    this.update(delta)
-    this.render()
-
-    this.lastTime = now
-
-    this.rafRef = requestAnimationFrame(this.main)
   }
 }
