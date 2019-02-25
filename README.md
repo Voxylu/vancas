@@ -30,7 +30,7 @@ vancas.update = (delta) => {
 vancas.render = () => {
   vancas.clear()
   vancas.background('grey')
-  vanvas.circle({ x: player.x, y: player.y, radius: 10, color: 'red' })
+  vancas.circle({ x: player.x, y: player.y, radius: 10, color: 'red' })
 }
 
 // Start the main loop (update & render)
