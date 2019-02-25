@@ -1,6 +1,8 @@
 import { CanvasDrawers } from './CanvasDrawers'
 import { CanvasWrapperOptions } from './CanvasWrapper'
 
+export class Vancas extends CanvasDrawers {}
+
 /**
  * Return a vancas instance.
  * Exemple:
