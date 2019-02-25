@@ -7,7 +7,8 @@
     "clean": "rimraf dist/",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "build:es": "tsc --module esnext --outDir dist/es",
-    "build": "npm-run-all clean --parallel build:*"
+    "build": "npm-run-all clean --parallel build:*",
+    "prepublish": "npm-run-all build"
   },
   "repository": {
     "type": "git",
