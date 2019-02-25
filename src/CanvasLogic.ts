@@ -50,7 +50,7 @@ export class CanvasLogic extends CanvasWrapper {
 
   private main = () => {
     const now = Date.now()
-    const delta = now - this.lastTime
+    const delta = (now - this.lastTime) / 1000.0
 
     this.update(delta)
     this.render()
