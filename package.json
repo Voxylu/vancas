@@ -1,0 +1,33 @@
+{
+  "name": "vancas",
+  "version": "1.0.0",
+  "description": "A nice wrapper for the html canvas.",
+  "main": "dist/cjs/index.js",
+  "scripts": {
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:es": "tsc --module esnext --outDir dist/es",
+    "build": "npm-run-all --parallel build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voxylu/vancas.git"
+  },
+  "keywords": [
+    "canvas",
+    "html",
+    "wrapper",
+    "game",
+    "p5",
+    "processing"
+  ],
+  "author": "Voxylu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Voxylu/vancas/issues"
+  },
+  "homepage": "https://github.com/Voxylu/vancas#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.3.3333"
+  }
+}
