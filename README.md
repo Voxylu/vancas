@@ -4,6 +4,8 @@
 
 ## Usage
 
+For more examples look in the `examples` directory.
+
 ```typescript
 // Import vancas
 import { createVancas } from 'vancas'
