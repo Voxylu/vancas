@@ -11,5 +11,5 @@ script('test-playground').run(
 
 script('publish')
   .run('rs build')
-  .run('git push origin/master')
+  .run('git push origin master')
   .run('npm publish')
