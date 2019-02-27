@@ -17,6 +17,12 @@ vancas.update = (delta) => {
 vancas.render = () => {
   vancas.clear()
   vancas.background('grey')
+  vancas.line({
+    x1: 0,
+    y1: 0,
+    x2: vancas.width,
+    y2: vancas.height,
+  })
   vancas.circle({
     x: vancas.width / 2,
     y: vancas.height / 2,

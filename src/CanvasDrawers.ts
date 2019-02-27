@@ -4,12 +4,12 @@ interface Strokable {
   stroke?: boolean
 }
 
-interface BasicElement extends Strokable {
+interface BasicElement {
   color?: string
   lineWidth?: number
 }
 
-interface BasicShape extends BasicElement {
+interface BasicCoord {
   x: number
   y: number
 }
@@ -40,17 +40,12 @@ export class CanvasDrawers extends CanvasLogic {
       y2: number
     } & BasicElement
   ) {
-    this.ctx.moveTo(ops.x1, ops.y1)
     this.ctx.beginPath()
+    this.ctx.moveTo(ops.x1, ops.y1)
     this.ctx.lineWidth = ops.lineWidth || DEFAULTS.lineWidth
     this.ctx.lineTo(ops.x2, ops.y2)
-    if (ops.stroke) {
-      this.ctx.strokeStyle = ops.color || DEFAULTS.color
-      this.ctx.stroke()
-    } else {
-      this.ctx.fillStyle = ops.color || DEFAULTS.color
-      this.ctx.fill()
-    }
+    this.ctx.strokeStyle = ops.color || DEFAULTS.color
+    this.ctx.stroke()
     this.ctx.closePath()
   }
 
@@ -61,7 +56,9 @@ export class CanvasDrawers extends CanvasLogic {
     ops: {
       width: number
       height: number
-    } & BasicShape
+    } & BasicCoord &
+      BasicElement &
+      Strokable
   ) {
     this.ctx.beginPath()
     this.ctx.lineWidth = ops.lineWidth || DEFAULTS.lineWidth
@@ -82,7 +79,9 @@ export class CanvasDrawers extends CanvasLogic {
   circle(
     ops: {
       radius: number
-    } & BasicShape
+    } & BasicElement &
+      BasicCoord &
+      Strokable
   ) {
     this.ctx.beginPath()
     this.ctx.lineWidth = ops.lineWidth || DEFAULTS.lineWidth
@@ -119,7 +118,9 @@ export class CanvasDrawers extends CanvasLogic {
       align?: 'center' | 'left' | 'right' | 'start' | 'end'
       font?: string
       maxWidth?: number
-    } & BasicShape
+    } & BasicCoord &
+      BasicElement &
+      Strokable
   ) {
     this.ctx.font = ops.font || DEFAULTS.font
     this.ctx.textAlign = ops.align || DEFAULTS.align
