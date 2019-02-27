@@ -43,10 +43,12 @@ vancas.render = () => {
   // The foods:
   foodGenerator.draw(vancas)
   // The score:
-  vancas.ctx.fillStyle = 'black'
-  vancas.ctx.font = '10px Arial'
-  const text = `Score: ${foodGenerator.score}`
-  vancas.ctx.fillText(text, 0, 10)
+  vancas.text({
+    text: `Score: ${foodGenerator.score}`,
+    x: 0,
+    y: 10,
+    font: '10px Arial',
+  })
 }
 
 // We start the game

@@ -4927,10 +4927,10 @@ v8-compile-cache@^2.0.0:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.0.2.tgz#a428b28bb26790734c4fc8bc9fa106fccebf6a6c"
   integrity sha512-1wFuMUIM16MDJRCrpbpuEPTUGmM5QMUg0cr3KFwra2XgOgFcPGDQHDh3CszSCD2Zewc/dh/pamNEW8CbfDebUw==
 
-vancas@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/vancas/-/vancas-1.0.5.tgz#c9488e91563123da137879b63d72687ab4283f05"
-  integrity sha512-p6pMgfOabOwzMiWeVuzBFZL2WuutfER92Y1q0lVHktzhvbmL6z7Ybu2X2V0FUNFGT45/b00KkyHZKS798XUaow==
+vancas@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vancas/-/vancas-1.1.0.tgz#ee801b9b9032d3baec6e6debb7ffa67093380260"
+  integrity sha512-AldNELcNq/3lP//jKX03b5bSp3Az64y7AmL8dD1H/Y+0DJ32BUtVJgN+RqdAJxcKrRse8PiXpznBLEoyn+oSRg==
 
 vendors@^1.0.0:
   version "1.0.2"

@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "trucs": "^1.0.1",
-    "vancas": "^1.0.5"
+    "vancas": "^1.1.0"
   },
   "scripts": {
     "start": "parcel src/index.html"

@@ -1,5 +1,5 @@
 // Import vancas
-import { createVancas } from 'https://unpkg.com/vancas@1.0.4/dist/es/index.js'
+import { createVancas } from 'https://unpkg.com/vancas@1.1.0/dist/es/index.js'
 
 // Create an instance
 const vancas = createVancas({ width: 500, height: 500 })
