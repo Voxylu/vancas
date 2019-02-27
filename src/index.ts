@@ -1,7 +1,8 @@
 import { CanvasDrawers } from './CanvasDrawers'
 import { CanvasWrapperOptions } from './CanvasWrapper'
+import { CanvasGroups } from './CanvasGroups'
 
-export class Vancas extends CanvasDrawers {}
+export class Vancas extends CanvasGroups {}
 
 /**
  * Return a vancas instance.
@@ -20,5 +21,5 @@ export class Vancas extends CanvasDrawers {}
  * ```
  */
 export const createVancas = (ops: CanvasWrapperOptions) => {
-  return new CanvasDrawers(ops)
+  return new Vancas(ops)
 }
