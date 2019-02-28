@@ -1,8 +1,8 @@
-import { CanvasDrawers } from './CanvasDrawers'
 import { CanvasWrapperOptions } from './CanvasWrapper'
-import { CanvasGroups } from './CanvasGroups'
+import { CanvasImage, loadImage } from './CanvasImage'
 
-export class Vancas extends CanvasGroups {}
+export class Vancas extends CanvasImage {}
+export { loadImage }
 
 /**
  * Return a vancas instance.
