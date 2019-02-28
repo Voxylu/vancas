@@ -96,6 +96,33 @@ export class CanvasDrawers extends CanvasLogic {
     this.ctx.closePath()
   }
 
+  triangle(
+    ops: {
+      x1: number
+      y1: number
+      x2: number
+      y2: number
+      x3: number
+      y3: number
+    } & BasicElement &
+      Strokable
+  ) {
+    this.ctx.beginPath()
+    this.ctx.lineWidth = ops.lineWidth || DEFAULTS.lineWidth
+    this.ctx.moveTo(ops.x1, ops.y1)
+    this.ctx.lineTo(ops.x2, ops.y2)
+    this.ctx.lineTo(ops.x3, ops.y3)
+    this.ctx.lineTo(ops.x1, ops.y1)
+    if (ops.stroke) {
+      this.ctx.strokeStyle = ops.color || DEFAULTS.color
+      this.ctx.stroke()
+    } else {
+      this.ctx.fillStyle = ops.color || DEFAULTS.color
+      this.ctx.fill()
+    }
+    this.ctx.closePath()
+  }
+
   /**
    * Set the background of the canvas to a color.
    */
