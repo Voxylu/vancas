@@ -30,8 +30,8 @@ vancas.render = () => {
     radius: 10,
     stroke: true,
   })
-  vancas.rotationGroup(
-    () => {
+  vancas
+    .group(() => {
       vancas.text({
         text: 'Hey!',
         x: vancas.width / 2,
@@ -40,13 +40,28 @@ vancas.render = () => {
         align: 'center',
         font: '30px Arial',
       })
-    },
-    {
-      x: vancas.width / 2,
-      y: vancas.height / 2,
-      rotation: rotation * (Math.PI / 180),
-    }
-  )
+    })
+    .translate({ x: vancas.width / 2, y: vancas.height / 2 })
+    .rotate({ rotation: rotation * (Math.PI / 180) })
+    .translate({ x: -vancas.width / 2, y: -vancas.height / 2 })
+    .render()
+  // vancas.rotationGroup(
+  //   () => {
+  //     vancas.text({
+  //       text: 'Hey!',
+  //       x: vancas.width / 2,
+  //       y: vancas.height / 2,
+  //       color: 'blue',
+  //       align: 'center',
+  //       font: '30px Arial',
+  //     })
+  //   },
+  //   {
+  //     x: vancas.width / 2,
+  //     y: vancas.height / 2,
+  //     rotation: rotation * (Math.PI / 180),
+  //   }
+  // )
 }
 
 vancas.start()

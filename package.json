@@ -1,11 +1,8 @@
 {
   "name": "vancas",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A nice wrapper for the html canvas.",
   "main": "dist/cjs/index.js",
-  "scripts": {
-    "prepublish": "rs build"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Voxylu/vancas.git"
