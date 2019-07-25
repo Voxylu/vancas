@@ -1,6 +1,6 @@
 {
   "name": "vancas",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A nice wrapper for the html canvas.",
   "main": "dist/cjs/index.js",
   "repository": {
