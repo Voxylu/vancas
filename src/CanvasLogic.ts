@@ -49,6 +49,7 @@ export class CanvasLogic extends CanvasWrapper {
    */
   public stop() {
     this.running = false
+    this.lastTime = 0
     cancelAnimationFrame(this.rafRef)
   }
 
