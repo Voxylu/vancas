@@ -4,12 +4,12 @@
   "main": "src/index.html",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.11.0",
-    "typescript": "^3.3.3333"
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.7.4"
   },
   "dependencies": {
     "trucs": "^1.0.1",
-    "vancas": "^1.1.0"
+    "vancas": "^1.2.6"
   },
   "scripts": {
     "start": "parcel src/index.html"
