@@ -1,10 +1,10 @@
-import { createVancas } from '../../src'
+import { createVancas } from "../../src"
 
 const vancas = createVancas({ width: 500, height: 500 })
 
-const root = document.getElementById('root')
+const root = document.getElementById("root")
 if (root) {
-  root.innerHTML = ''
+  root.innerHTML = ""
   root.appendChild(vancas.canvasEl)
 }
 
@@ -16,7 +16,17 @@ vancas.update = (delta) => {
 
 vancas.render = () => {
   vancas.clear()
-  vancas.background('grey')
+  const shaper = vancas.getShaper({ color: "red" })
+
+  vancas.background("grey")
+  shaper
+    .start()
+    .go(100, 100)
+    .line(100, 200)
+    .line(200, 200)
+    .line(200, 100)
+    .done()
+
   vancas.line({
     x1: 0,
     y1: 0,
@@ -26,19 +36,19 @@ vancas.render = () => {
   vancas.circle({
     x: vancas.width / 2,
     y: vancas.height / 2,
-    color: 'blue',
+    color: "blue",
     radius: 10,
     stroke: true,
   })
   vancas
     .group(() => {
       vancas.text({
-        text: 'Hey!',
+        text: "Hey!",
         x: vancas.width / 2,
         y: vancas.height / 2,
-        color: 'blue',
-        align: 'center',
-        font: '30px Arial',
+        color: "blue",
+        align: "center",
+        font: "30px Arial",
       })
     })
     .translate({ x: vancas.width / 2, y: vancas.height / 2 })

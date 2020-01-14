@@ -1,4 +1,4 @@
-import { CanvasLogic } from './CanvasLogic'
+import { CanvasLogic } from "./CanvasLogic"
 
 interface Strokable {
   stroke?: boolean
@@ -15,17 +15,17 @@ interface BasicCoord {
 }
 
 interface Defaults {
-  color: 'black'
+  color: "black"
   lineWidth: 1.0
-  font: '10px Arial'
-  align: 'start'
+  font: "10px Arial"
+  align: "start"
 }
 
 const DEFAULTS: Defaults = {
-  color: 'black',
+  color: "black",
   lineWidth: 1.0,
-  font: '10px Arial',
-  align: 'start',
+  font: "10px Arial",
+  align: "start",
 }
 
 export class CanvasDrawers extends CanvasLogic {
@@ -96,6 +96,35 @@ export class CanvasDrawers extends CanvasLogic {
     this.ctx.closePath()
   }
 
+  getShaper(ops: BasicElement & Strokable) {
+    const shaper = {
+      start: () => {
+        this.ctx.beginPath()
+        this.ctx.lineWidth = ops.lineWidth || DEFAULTS.lineWidth
+        return shaper
+      },
+      go: (x: number, y: number) => {
+        this.ctx.moveTo(x, y)
+        return shaper
+      },
+      line: (x: number, y: number) => {
+        this.ctx.lineTo(x, y)
+        return shaper
+      },
+      done: () => {
+        this.ctx.closePath()
+        if (ops.stroke) {
+          this.ctx.strokeStyle = ops.color || DEFAULTS.color
+          this.ctx.stroke()
+        } else {
+          this.ctx.fillStyle = ops.color || DEFAULTS.color
+          this.ctx.fill()
+        }
+      },
+    }
+    return shaper
+  }
+
   triangle(
     ops: {
       x1: number
@@ -142,7 +171,7 @@ export class CanvasDrawers extends CanvasLogic {
   text(
     ops: {
       text: string
-      align?: 'center' | 'left' | 'right' | 'start' | 'end'
+      align?: "center" | "left" | "right" | "start" | "end"
       font?: string
       maxWidth?: number
     } & BasicCoord &
