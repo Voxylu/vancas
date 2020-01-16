@@ -28,6 +28,13 @@ const DEFAULTS: Defaults = {
   align: "start",
 }
 
+interface Shaper {
+  start: () => Shaper
+  go: (x: number, y: number) => Shaper
+  line: (x: number, y: number) => Shaper
+  done: () => void
+}
+
 export class CanvasDrawers extends CanvasLogic {
   /**
    * Draw a line.
@@ -97,7 +104,7 @@ export class CanvasDrawers extends CanvasLogic {
   }
 
   getShaper(ops: BasicElement & Strokable) {
-    const shaper = {
+    const shaper: Shaper = {
       start: () => {
         this.ctx.beginPath()
         this.ctx.lineWidth = ops.lineWidth || DEFAULTS.lineWidth
