@@ -1,7 +1,8 @@
-import { CanvasWrapperOptions } from './CanvasWrapper'
-import { CanvasImage, loadImage } from './CanvasImage'
+import { CanvasWrapperOptions } from "./CanvasWrapper"
+import { loadImage } from "./CanvasImage"
+import { CanvasMouse } from "./CanvasMouse"
 
-export class Vancas extends CanvasImage {}
+export class Vancas extends CanvasMouse {}
 export { loadImage }
 
 /**
