@@ -16,12 +16,13 @@ vancas.update = (delta) => {
 
 vancas.render = () => {
   vancas.clear()
-  const shaper = vancas.getShaper({ color: "red" })
+
+  const shaper = vancas.getShaper({ color: vancas.mouse.button === 1 ? "red" : "blue" })
 
   vancas.background("grey")
   shaper
     .start()
-    .go(100, 100)
+    .go(vancas.mouse.x, vancas.mouse.y)
     .line(100, 200)
     .line(200, 200)
     .line(200, 100)
