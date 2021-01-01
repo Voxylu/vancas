@@ -1,6 +1,6 @@
 {
   "name": "vancas",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A nice wrapper for the html canvas.",
   "main": "dist/cjs/index.js",
   "repository": {
@@ -25,6 +25,6 @@
     "parcel-bundler": "^1.12.4",
     "rapidescript": "^1.0.4",
     "rimraf": "^3.0.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.8.3"
   }
 }

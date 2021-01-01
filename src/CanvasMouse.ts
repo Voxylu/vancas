@@ -10,20 +10,28 @@ export class CanvasMouse extends CanvasImage {
     contextmenu: true,
   }
 
-  start() {
-    super.start()
+  initialize() {
     this.canvasEl.addEventListener("mousemove", this.mouseHandler)
     this.canvasEl.addEventListener("mouseup", this.mouseHandler)
     this.canvasEl.addEventListener("mousedown", this.mouseHandler)
     this.canvasEl.addEventListener("contextmenu", this.contextmenu)
   }
 
-  stop() {
-    super.stop()
+  deinitialize() {
     this.canvasEl.removeEventListener("mousemove", this.mouseHandler)
     this.canvasEl.removeEventListener("mouseup", this.mouseHandler)
     this.canvasEl.removeEventListener("mousedown", this.mouseHandler)
     this.canvasEl.removeEventListener("contextmenu", this.contextmenu)
+  }
+
+  start() {
+    super.start()
+    this.initialize()
+  }
+
+  stop() {
+    super.stop()
+    this.deinitialize()
   }
 
   private mouseHandler = (ev: MouseEvent) => {
